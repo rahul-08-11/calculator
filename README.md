@@ -23,3 +23,13 @@ factorials calculation
 
 Decimal addition,subtraction,multiplication and divisions.
 
+## Normal mode layout
+
+![normal_mode](https://user-images.githubusercontent.com/90087006/192087422-aabcc8bd-4cf5-43d9-a885-6ad5baeab8f1.png)
+
+## Scientific mode layout
+![scientific_mode](https://user-images.githubusercontent.com/90087006/192087469-b68978f7-964e-42bd-900d-9da77dbfeb9f.png)
+
+## Overall wworking design
+![overall](https://user-images.githubusercontent.com/90087006/192087477-9b9b2532-caf9-4622-86db-02f77e5a4198.png)
+
