@@ -4,32 +4,32 @@ A Simple calculator which has 2 different mode for different interface to perfor
 
 Basic Operations:
 
-Addition
+* Addition
 
-Subtraction
+* Subtraction
 
-Multiplication
+* Multiplication
 
-Division
+* Division
 
 
 Scientific Operations:
 
-trignometric operations like cos,sin and tan. 
+* Trignometric operations like cos,sin and tan. 
 
-logarithmic operations
+* Logarithmic operations
 
-factorials calculation
+* Factorials calculation
 
-Decimal addition,subtraction,multiplication and divisions.
+* Decimal addition,subtraction,multiplication and divisions.
 
-## Normal mode layout
+## Normal Mode Layout
 
 ![normal_mode](https://user-images.githubusercontent.com/90087006/192087422-aabcc8bd-4cf5-43d9-a885-6ad5baeab8f1.png)
 
-## Scientific mode layout
+## Scientific Mode Layout
 ![scientific_mode](https://user-images.githubusercontent.com/90087006/192087469-b68978f7-964e-42bd-900d-9da77dbfeb9f.png)
 
-## Overall wworking design
+## Overall Working Design
 ![overall](https://user-images.githubusercontent.com/90087006/192087477-9b9b2532-caf9-4622-86db-02f77e5a4198.png)
 
