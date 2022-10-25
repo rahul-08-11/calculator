@@ -3,8 +3,9 @@ from qtcalculator import Ui_calculator
 import sys
 from PyQt5 import  QtWidgets
 from functools import partial
-from math import *
 
+from normalcalulation import NormalCalculation
+from scientificcalculation import ScientificCalculation
 
 dic_to_store_values={
     "first_value":"",
@@ -12,7 +13,7 @@ dic_to_store_values={
     "second_value":"" 
 }
 
-class calculatorClass():
+class CalculatorClass(NormalCalculation,ScientificCalculation):
     def __init__(self,ui,dic_to_store_values) -> None:
         print("initializing")
         self.ui=ui
@@ -57,70 +58,13 @@ class calculatorClass():
         self.text+=value
         self.ui.inputfield.setText(self.text)
 
-    def checking_inputs(self,value):   
-
-                                                   
+    def checking_inputs(self,value):                                                    
         if value in self.list_of_elements:               #getting values and feeding it into concatenation func
            self.concatenation(f"{value}")
         elif value in self.normal_operation_list or value in self.scientific_normal_operation_list:
            self.concatenation(value)
 
 
-
-    def normal_calculation(self):
-        self.text=""
-        self.ui.inputfield.clear()
-        operation=self.dic["operator"]
-        first_value = float(self.dic["first_value"])
-        second_value = float(self.dic["second_value"])
-        if operation=="+":
-           result=first_value+second_value
-
-        elif operation=="/":
-            result=first_value/second_value
-
-
-        elif operation=="x":
-            result=first_value*second_value
-
-        elif operation=="-":
-            result=first_value-second_value
-
-        self.ui.inputfield.setText(f"{result}")
-        self.to_output_on_scroll+=f"{first_value}{operation}{second_value}   =      {result} \n"
-        self.ui.label.setText(f"{self.to_output_on_scroll}")
-        print("Success!")
-
-
-    def scientific_calculation(self,input_field_text):
-        number=self.text
-        self.text=""
-        number=int(number)
-        if "tan" in input_field_text:
-            result=tan(number)
-            format_str=f"tan({number})"
-        elif "cos" in input_field_text:
-            result =cos(number)
-            format_str=f"cos({number})"
-        elif "sin" in input_field_text:
-            result= sin(number)
-            format_str=f"sin({number})"
-        elif "ln" in input_field_text:
-            result=log(number)
-            format_str=f"ln({number})"
-        elif "log" in input_field_text:
-            result=log10(number)
-            format_str=f"log({number})"
-        elif input_field_text.index("!")==len(input_field_text)-1:
-            result =factorial(number)
-            format_str=f"{number}!" 
-
-        self.ui.inputfield.setText(f"{result}")
-        self.to_output_on_scroll+=f"{format_str}     =      {result} \n"
-        self.ui.label.setText(f"{self.to_output_on_scroll}")
-        print("Success!")
-
-        
           
     def assign_values_in_dic(self):
 
@@ -196,7 +140,7 @@ calculator = QtWidgets.QMainWindow()
 ui = Ui_calculator()
 ui.setupUi(calculator)
 calculator.show()    
-obj=calculatorClass(ui,dic_to_store_values)
+obj=CalculatorClass(ui,dic_to_store_values)
 
 
 if __name__=="__main__":
